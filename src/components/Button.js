@@ -19,6 +19,6 @@ export const Button = styled(Link)`
   font-size: ${({ big }) => (big ? "20px" : "14px")};
 
   &:hover {
-      transformL translateY(-2px);
+    transform: translateY(-2px);
   }
 `;

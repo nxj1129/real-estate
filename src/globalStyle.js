@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html, body {
-        overflox-x: hidden;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
     }
 `;
 

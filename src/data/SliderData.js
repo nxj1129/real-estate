@@ -1,7 +1,7 @@
-import LuxuryBali from "../assets/luxurybali.jpg";
-import LuxuryItaly from "../assets/luxuryitaly.jpg";
-import LuxurySpain from "../assets/luxuryspain.jpg";
-import LuxuryUsa from "../assets/luxuryusa.jpg";
+import LuxuryBali from "../images/luxurybali.jpg";
+import LuxuryItaly from "../images/luxuryitaly.jpg";
+import LuxurySpain from "../images/luxuryspain.jpg";
+import LuxuryUsa from "../images/luxuryusa.jpg";
 
 export const SliderData = [
   {
