@@ -5,6 +5,7 @@ import GlobalStyle from "./globalStyle";
 import { SliderData } from "./data/SliderData";
 import DropDown from "./components/DropDown";
 import InfoSection from "./components/InfoSection";
+import PreviewHouses from "./components/PreviewHouses";
 import { InfoData } from "./data/InfoData";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <DropDown isOpen={isOpen} toggle={toggle} />
       <Hero slides={SliderData} />
       <InfoSection {...InfoData} />
+      <PreviewHouses />
     </>
   );
 }
