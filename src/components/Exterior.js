@@ -1,8 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Section = styled.div`
   width: 100%;
@@ -48,7 +46,7 @@ const ColumnRight = styled.div`
   jsutify-content: center;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 460px) {
     order: ${({ reverse }) => (reverse ? "2" : "1")};
   }
 
@@ -64,7 +62,7 @@ const ColumnRight = styled.div`
   }
 `;
 
-const InfoSection = ({
+const Exterior = ({
   heading,
   paragraphOne,
   paragraphTwo,
@@ -72,62 +70,18 @@ const InfoSection = ({
   reverse,
   image,
 }) => {
-  gsap.registerPlugin(ScrollTrigger);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector(".header"),
-      {
-        opacity: 0,
-        y: -60,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".section"),
-          start: "top top",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector(".paragraph"),
-      {
-        opacity: 0,
-        x: -200,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".cl"),
-          duration: 1,
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
   return (
-    <Section ref={ref}>
-      <Container className="container">
-        <ColumnLeft className="cl">
-          <h1 className="header">{heading}</h1>
-          <p className="paragraph">{paragraphOne}</p>
-          <p className="paragraph">{paragraphTwo}</p>
+    <Section>
+      <Container>
+        <ColumnLeft>
+          <h1>{heading}</h1>
+          <p>{paragraphOne}</p>
+          <p>{paragraphTwo}</p>
           <Button to="/homes" primary={true}>
             {buttonLabel}
           </Button>
         </ColumnLeft>
-        <ColumnRight reverse={reverse}>
+        <ColumnRight>
           <img src={image} alt="home" />
         </ColumnRight>
       </Container>
@@ -135,4 +89,4 @@ const InfoSection = ({
   );
 };
 
-export default InfoSection;
+export default Exterior;

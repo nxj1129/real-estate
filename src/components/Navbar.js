@@ -15,7 +15,7 @@ const Nav = styled.nav`
   position: fixed;
   width: 100%;
   background: ${({ position }) =>
-    position === "top" ? "rgba(0, 0, 0, 0)" : "rgba(0, 0, 0, .8)"};
+    position === "top" ? "rgba(0, 0, 0, 0)" : "rgba(120, 120, 120)"};
 `;
 
 const NavLink = css`

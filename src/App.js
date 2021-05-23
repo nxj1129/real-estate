@@ -6,6 +6,9 @@ import { SliderData } from "./data/SliderData";
 import DropDown from "./components/DropDown";
 import InfoSection from "./components/InfoSection";
 import PreviewHouses from "./components/PreviewHouses";
+import Interior from "./components/Interior";
+import Exterior from "./components/Exterior";
+import Footer from "./components/Footer";
 import { InfoData } from "./data/InfoData";
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
       <Hero slides={SliderData} />
       <InfoSection {...InfoData} />
       <PreviewHouses />
+      <Interior />
+      <Exterior {...InfoData} />
+      <Footer />
     </>
   );
 }
