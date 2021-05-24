@@ -3,6 +3,7 @@ import styled, { css } from "styled-components/macro";
 import { Button } from "./Button";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import { TimelineLite, Power3 } from "gsap";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -131,10 +132,16 @@ const Hero = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
   const timeout = useRef(null);
+  let t1 = new TimelineLite({ delay: 0.3 });
 
   useEffect(() => {
     const nextSlide = () => {
       setCurrent((current) => (current === length - 1 ? 0 : current + 1));
+      t1.from(
+        ".animatedText",
+        { y: 15, opacity: 0, ease: Power3.easeOut, delay: 0.2 },
+        "Start"
+      );
     };
     timeout.current = setTimeout(nextSlide, 3000);
     return function () {
@@ -165,8 +172,8 @@ const Hero = ({ slides }) => {
               <HeroSlider>
                 <HeroImage src={slide.image} alt={slide.alt} />
                 <HeroContent>
-                  <h1>{slide.title}</h1>
-                  <p>{slide.price}</p>
+                  <h1 className="animatedText">{slide.title}</h1>
+                  <p className="animatedText">{slide.price}</p>
                   <Button
                     to={slide.path}
                     primary="true"

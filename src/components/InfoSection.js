@@ -1,8 +1,9 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
-import { gsap } from "gsap";
+import { gsap, TimelineLite, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Section = styled.div`
   width: 100%;
@@ -72,52 +73,24 @@ const InfoSection = ({
   reverse,
   image,
 }) => {
-  gsap.registerPlugin(ScrollTrigger);
-  const ref = useRef(null);
-
+  let t1 = new TimelineLite();
   useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector(".header"),
-      {
-        opacity: 0,
-        y: -60,
+    gsap.from(".container", {
+      duration: 2,
+      y: "100",
+      opacity: 0,
+      ease: "ease-in",
+      scrollTrigger: {
+        trigger: ".cl",
+        start: "top 90%",
+        end: "bottom 60%",
+        toggleActions: "restart complete reverse reset",
       },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".section"),
-          start: "top top",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    const element = ref.current;
-    gsap.fromTo(
-      element.querySelector(".paragraph"),
-      {
-        opacity: 0,
-        x: -200,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".cl"),
-          duration: 1,
-          scrub: true,
-        },
-      }
-    );
+    });
   }, []);
 
   return (
-    <Section ref={ref}>
+    <Section>
       <Container className="container">
         <ColumnLeft className="cl">
           <h1 className="header">{heading}</h1>
