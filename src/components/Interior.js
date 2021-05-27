@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import LuxuryUsa from "../images/luxuryusa.jpg";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Section = styled.div`
   width: 100%;
@@ -71,12 +74,27 @@ const ColumnRight = styled.div`
 `;
 
 const Interior = () => {
+  useEffect(() => {
+    gsap.from(".interiorContainer", {
+      duration: 1,
+      y: "-30",
+      opacity: 0,
+      ease: "ease-in",
+      scrollTrigger: {
+        trigger: ".slideText",
+        start: "top",
+        end: "bottom",
+        toggleActions: "play none none none",
+      },
+    });
+  }, []);
+
   return (
     <Section>
-      <Container>
+      <Container className="interiorContainer">
         <ColumnLeft>
-          <h1>Stunning Interior</h1>
-          <p>
+          <h1 className="slideText">Stunning Interior</h1>
+          <p className="slideText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
             possimus debitis. Voluptate dolorem dolorum enim laborum suscipit
             sint necessitatibus ipsam est, ullam ipsum deleniti, pariatur alias,

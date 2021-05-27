@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "./Button";
-import { gsap, TimelineLite, Power3 } from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,6 +24,7 @@ const Container = styled.div`
 `;
 
 const ColumnLeft = styled.div`
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,26 +74,25 @@ const InfoSection = ({
   reverse,
   image,
 }) => {
-  let t1 = new TimelineLite();
   useEffect(() => {
-    gsap.from(".container", {
-      duration: 2,
-      y: "100",
+    gsap.from(".infoContainer", {
+      duration: 1,
+      x: "-100",
       opacity: 0,
       ease: "ease-in",
       scrollTrigger: {
-        trigger: ".cl",
-        start: "top 90%",
-        end: "bottom 60%",
-        toggleActions: "restart complete reverse reset",
+        trigger: ".columnLeft",
+        start: "top",
+        end: "bottom",
+        toggleActions: "play none none none",
       },
     });
   }, []);
 
   return (
     <Section>
-      <Container className="container">
-        <ColumnLeft className="cl">
+      <Container className="infoContainer">
+        <ColumnLeft className="columnLeft">
           <h1 className="header">{heading}</h1>
           <p className="paragraph">{paragraphOne}</p>
           <p className="paragraph">{paragraphTwo}</p>

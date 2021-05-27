@@ -11,12 +11,12 @@ export const InfoData = {
 };
 
 export const InfoDataTwo = {
-  heading: "Modern Designs",
+  heading: "Explore our beautiful rentals",
   paragraphOne:
     "Lorem ipsum dolor sit amet consectetur bis necessitan sint quia aliquid ducimus.",
   paragraphTwo:
     "Lorem ipsum dolor sit amet consect dolor sit amet consect dolor sit amet consect",
-  buttonLabel: "View Homes",
+  buttonLabel: "View Rentals",
   image:
     "https://images.unsplash.com/photo-1606301261512-55807437407d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80",
   reverse: true,

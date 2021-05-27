@@ -9,7 +9,7 @@ import PreviewHouses from "./components/PreviewHouses";
 import Interior from "./components/Interior";
 import Exterior from "./components/Exterior";
 import Footer from "./components/Footer";
-import { InfoData } from "./data/InfoData";
+import { InfoData, InfoDataTwo } from "./data/InfoData";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ function App() {
       <InfoSection {...InfoData} />
       <PreviewHouses />
       <Interior />
-      <Exterior {...InfoData} />
+      <Exterior {...InfoDataTwo} />
       <Footer />
     </>
   );

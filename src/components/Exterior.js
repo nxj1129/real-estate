@@ -81,7 +81,7 @@ const Exterior = ({
             {buttonLabel}
           </Button>
         </ColumnLeft>
-        <ColumnRight>
+        <ColumnRight reverse={reverse}>
           <img src={image} alt="home" />
         </ColumnRight>
       </Container>
