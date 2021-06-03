@@ -83,7 +83,7 @@ const InfoSection = ({
       scrollTrigger: {
         trigger: ".columnLeft",
         start: "top",
-        end: "bottom",
+        end: "center",
         toggleActions: "play none none none",
       },
     });

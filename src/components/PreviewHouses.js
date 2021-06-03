@@ -50,13 +50,13 @@ const PreviewHouses = () => {
   useEffect(() => {
     gsap.from(".previewContainer", {
       duration: 1,
-      y: "100",
+      x: "50",
       opacity: 0,
       ease: "ease-in",
       scrollTrigger: {
         trigger: ".column",
         start: "top",
-        end: "bottom",
+        end: "top",
         toggleActions: "play none none none",
       },
     });

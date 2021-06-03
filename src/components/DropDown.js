@@ -10,12 +10,12 @@ const DropDownContainer = styled.div`
   z-index: 999;
   width: 100%;
   height: 100%;
-  background: #cd853f;
+  background: #d0d0d0;
   display: grid;
   align-items: center;
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   left: 0;
-  transition: 0.3 ease-in-out;
+  transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "1" : "0")};
 `;
 
@@ -33,6 +33,7 @@ const CloseIcon = styled(FaTimes)`
   color: #000d1a;
 `;
 const DropDownWrapper = styled.div``;
+
 const DropDownMenu = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -44,6 +45,7 @@ const DropDownMenu = styled.div`
     grid-template-rows: repeat(4, 60px);
   }
 `;
+
 const DropDownLink = styled(Link)`
   display: flex;
   align-items: center;
@@ -53,12 +55,13 @@ const DropDownLink = styled(Link)`
   text-decoration: none;
   list-style: none;
   cursor: pointer;
-  transition: 0.2 ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     color: #000d1a;
   }
 `;
+
 const BtnWrap = styled.div`
   display: flex;
   justify-content: center;

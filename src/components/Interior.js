@@ -83,7 +83,7 @@ const Interior = () => {
       scrollTrigger: {
         trigger: ".slideText",
         start: "top",
-        end: "bottom",
+        end: "center",
         toggleActions: "play none none none",
       },
     });
